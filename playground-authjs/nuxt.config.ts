@@ -9,6 +9,9 @@ export default defineNuxtConfig({
     '/': {
       prerender: true
     },
+    '/guest': {
+      prerender: true
+    },
     '/**': {
       prerender: true
     }
