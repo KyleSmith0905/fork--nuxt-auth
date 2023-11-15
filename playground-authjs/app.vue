@@ -1,13 +1,7 @@
 <script setup lang="ts">
-import { useAuth, useRoute, useFetch, useRequestHeaders } from '#imports'
+import { useAuth, useRoute } from '#imports'
 
-const { data, status, lastRefreshedAt, getCsrfToken, getProviders, signIn, signOut, getSession } = useAuth()
-
-const providers = await getProviders()
-const csrfToken = await getCsrfToken()
-
-const headers = useRequestHeaders(['cookie']) as HeadersInit
-const { data: token } = await useFetch('/api/token', { headers })
+const { data, status, lastRefreshedAt, signIn, signOut, getSession } = useAuth()
 
 const route = useRoute()
 </script>
@@ -21,9 +15,6 @@ const route = useRoute()
     <pre>Status: {{ status }}</pre>
     <pre>Data: {{ data || 'no session data present, are you logged in?' }}</pre>
     <pre>Last refreshed at: {{ lastRefreshedAt || 'no refresh happened' }}</pre>
-    <pre>Decoded JWT token: {{ token || 'no token present, are you logged in?' }}</pre>
-    <pre>CSRF Token: {{ csrfToken }}</pre>
-    <pre>Providers: {{ providers }}</pre>
     <hr>
     <h2>Navigation</h2>
     <p>Navigate to different pages below to test out different things:</p>
