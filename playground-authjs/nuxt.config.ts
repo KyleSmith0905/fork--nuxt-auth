@@ -3,9 +3,14 @@ export default defineNuxtConfig({
   auth: {
     provider: {
       type: 'authjs'
+    }
+  },
+  routeRules: {
+    '/': {
+      prerender: true
     },
-    globalAppMiddleware: {
-      isEnabled: true
+    '/**': {
+      prerender: true
     }
   }
 })
