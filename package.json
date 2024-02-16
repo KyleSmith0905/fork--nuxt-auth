@@ -1,6 +1,6 @@
 {
   "name": "@kylesmith0905/sidebase__nuxt-auth",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "license": "MIT",
   "type": "module",
   "exports": {
