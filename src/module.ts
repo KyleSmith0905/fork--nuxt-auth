@@ -95,7 +95,7 @@ const defaultsByBackend: {
   }
 }
 
-const PACKAGE_NAME = 'sidebase-auth'
+const PACKAGE_NAME = '@kylesmith0905/sidebase__nuxt-auth'
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
