@@ -26,7 +26,12 @@ definePageMeta({ auth: false })
     <p v-else>
       This page was not cached.
     </p>
-    <p>Cached At: <nuxt-island><CurrentTime /></nuxt-island>.</p>
-    <p>Created At: <client-only><CurrentTime /></client-only>.</p>
+    <p>
+      Cached At:
+      <NuxtIsland name="cached-at">
+        <CurrentTime />
+      </NuxtIsland>.
+    </p>
+    <p>Created At: <ClientOnly><CurrentTime /></ClientOnly>.</p>
   </div>
 </template>

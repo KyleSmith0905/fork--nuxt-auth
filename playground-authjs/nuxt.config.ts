@@ -9,6 +9,9 @@ export default defineNuxtConfig({
     },
     baseURL: process.env.AUTH_ORIGIN
   },
+  experimental: {
+    componentIslands: true
+  },
   routeRules: {
     '/with-caching': {
       swr: 86400000,
