@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     globalAppMiddleware: {
       isEnabled: true
     },
-    baseURL: 'https://' + process.env.VERCEL_URL + '/api/auth'
+    baseURL: process.env.AUTH_ORIGIN
   },
   routeRules: {
     '/with-caching': {
