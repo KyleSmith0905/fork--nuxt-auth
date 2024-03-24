@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref } from '#imports'
 
-const currentTime = ref(new Date())
+const time = ref<Date | undefined>(new Date())
 </script>
 <template>
-  <span>{{ currentTime?.toISOString() }}</span>
+  <span>
+    {{ time?.toISOString() }}
+  </span>
 </template>
