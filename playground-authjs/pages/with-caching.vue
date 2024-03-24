@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, definePageMeta, onMounted, ref } from '#imports'
+import { NuxtIsland, ClientOnly } from '#build/components'
 import CurrentTime from '~/components/CurrentTime.vue'
 
 const cachedAt = ref(new Date())
