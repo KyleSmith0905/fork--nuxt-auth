@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, definePageMeta, onMounted, ref } from '#imports'
+import CurrentTime from '~/components/CurrentTime.vue'
 
 const cachedAt = ref(new Date())
 const enteredAt = ref<Date | undefined>(undefined)
@@ -25,7 +26,7 @@ definePageMeta({ auth: false })
     <p v-else>
       This page was not cached.
     </p>
-    <p>Cached At: {{ cachedAt?.toISOString() }}.</p>
-    <p>Created At: {{ enteredAt?.toISOString() }}.</p>
+    <p>Cached At: <NuxtIsland><CurrentTime /></NuxtIsland>.</p>
+    <p>Created At: <ClientOnly><CurrentTime /></ClientOnly>.</p>
   </div>
 </template>
