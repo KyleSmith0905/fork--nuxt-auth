@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import { definePageMeta } from '#imports'
+import { definePageMeta, ref, useState } from '#imports'
+
+const clientRenderTime = ref<Date>(new Date())
+
+const serverRenderTime = useState('server-render-date', () => new Date())
 
 definePageMeta({ auth: false })
 </script>
 
 <template>
   <div>
-    <p>
-      Server Render Time: <NuxtIsland name="CurrentTime" />
-    </p>
-    <p>Client Render Time: <ClientOnly><CurrentTime /></ClientOnly></p>
+    <p>Server Render Time: {{ serverRenderTime?.toISOString() }}</p>
+    <p>Client Render Time: {{ clientRenderTime?.toISOString() }}</p>
   </div>
 </template>
