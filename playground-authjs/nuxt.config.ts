@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/with-caching': {
-      // swr: 86400000,
+      swr: 86400000,
       auth: {
         disableServerSideAuth: true
       }
