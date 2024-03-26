@@ -1,3 +1,7 @@
+const getBaseUrl = () => {
+  return process.env.AUTH_ORIGIN?.split('/api/auth')[0] ?? `http://localhost:${process.env.PORT || 3000}`
+}
+
 export default defineNuxtConfig({
   modules: ['../src/module.ts'],
   auth: {
@@ -7,11 +11,11 @@ export default defineNuxtConfig({
     globalAppMiddleware: {
       isEnabled: true
     },
-    baseURL: `http://localhost:${process.env.PORT || 3000}`
+    baseURL: getBaseUrl()
   },
   routeRules: {
     '/with-caching': {
-      swr: 86400000,
+      // swr: 86400000,
       auth: {
         disableServerSideAuth: true
       }
